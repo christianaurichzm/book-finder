@@ -12,7 +12,7 @@ import javax.persistence.Id
 data class Book (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int,
+    val id: Long,
 
     @Column(nullable = false)
     val name: String
