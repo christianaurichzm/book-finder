@@ -1,6 +1,8 @@
 package br.com.christian.bookfinder.model
 
 import lombok.Data
+import lombok.Getter
+import lombok.Setter
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -19,5 +21,5 @@ data class Book (
     val title: String,
 
     @OneToMany(mappedBy = "book")
-    val copys: Set<Copy>
+    val copys: List<Copy>
 )

@@ -19,5 +19,5 @@ data class Store (
     val name: String,
 
     @OneToMany(mappedBy="store")
-    val copys: Set<Copy>
+    val copys: List<Copy>
 )
