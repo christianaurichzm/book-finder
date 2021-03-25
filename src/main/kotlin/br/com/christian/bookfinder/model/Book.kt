@@ -6,6 +6,7 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.persistence.OneToMany
 
 @Data
 @Entity
@@ -15,5 +16,8 @@ data class Book (
     val id: Long,
 
     @Column(nullable = false)
-    val name: String
+    val title: String,
+
+    @OneToMany(mappedBy = "book")
+    val copys: Set<Copy>
 )
