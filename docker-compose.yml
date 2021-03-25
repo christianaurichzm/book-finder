@@ -2,8 +2,6 @@ version: '3.1'
 services:
   postgresql:
     image: postgres
-    volumes:
-      - ./backend/data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     environment:
