@@ -23,5 +23,5 @@ data class Store (
 
     @OneToMany(mappedBy="store", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JsonIgnore
-    val copys: List<Copy>
+    val copies: List<Copy>
 )

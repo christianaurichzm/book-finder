@@ -12,8 +12,9 @@ class BookServiceImpl : BookService {
     @Autowired
     lateinit var bookRepository: BookRepository
 
+    @Transactional
     override fun findStoresByBookId(id: Long): List<Store>? {
-        return findById(id).copys?.map { copy -> copy.store }
+        return findById(id).copies?.map { copy -> copy.store }
     }
 
     @Transactional

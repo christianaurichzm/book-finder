@@ -1,5 +1,6 @@
 package br.com.christian.bookfinder.model
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -14,6 +15,7 @@ import javax.persistence.Table
 data class Copy (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     val id: Long,
 
     @ManyToOne
@@ -22,6 +24,7 @@ data class Copy (
 
     @ManyToOne
     @JoinColumn(name = "store_id")
+    @JsonIgnore
     var store: Store,
 
     @Column(name="price", nullable = false)

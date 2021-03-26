@@ -1,8 +1,7 @@
 package br.com.christian.bookfinder.controller
 
-import br.com.christian.bookfinder.model.Book
+import br.com.christian.bookfinder.model.Copy
 import br.com.christian.bookfinder.model.Store
-import br.com.christian.bookfinder.repository.StoreRepository
 import br.com.christian.bookfinder.service.StoreServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -23,6 +22,11 @@ class StoreController {
     @GetMapping("/{id}")
     fun getStore(@PathVariable id: Long): Store {
         return storeService.findById(id)
+    }
+
+    @GetMapping("/{id}/stock")
+    fun getStoreStock(@PathVariable id: Long): List<Copy> {
+        return storeService.getStock(id)
     }
 
     @GetMapping

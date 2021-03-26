@@ -1,8 +1,6 @@
 package br.com.christian.bookfinder.controller
 
-import br.com.christian.bookfinder.model.Book
 import br.com.christian.bookfinder.model.Copy
-import br.com.christian.bookfinder.service.BookServiceImpl
 import br.com.christian.bookfinder.service.CopyServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -15,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/copys")
+@RequestMapping("/copies")
 class CopyController {
     @Autowired
     lateinit var copyService: CopyServiceImpl
@@ -26,7 +24,7 @@ class CopyController {
     }
 
     @GetMapping
-    fun getAllCopys(): List<Copy> {
+    fun getAllCopies(): List<Copy> {
         return copyService.findAll()
     }
 

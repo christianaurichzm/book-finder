@@ -23,5 +23,5 @@ data class Book (
 
     @OneToMany(mappedBy = "book", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JsonIgnore
-    var copys: List<Copy>?
+    var copies: List<Copy>?
 )
