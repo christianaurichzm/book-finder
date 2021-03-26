@@ -24,7 +24,7 @@ class BookController {
 
     @PostMapping
     fun addBook(@RequestBody book: Book): Book {
-       bookService.save(book)
+        bookService.save(book)
         return book
     }
 }
