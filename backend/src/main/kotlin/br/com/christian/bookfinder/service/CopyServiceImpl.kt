@@ -22,8 +22,8 @@ class CopyServiceImpl : CopyService {
     }
 
     @Transactional
-    override fun save(copy: Copy) {
-        copyRepository.save(copy)
+    override fun save(copy: Copy): Copy {
+        return copyRepository.save(copy)
     }
 
     @Transactional

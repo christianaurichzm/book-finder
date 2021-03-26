@@ -22,8 +22,8 @@ class BookServiceImpl : BookService {
     }
 
     @Transactional
-    override fun save(book: Book) {
-        bookRepository.save(book)
+    override fun save(book: Book): Book {
+        return bookRepository.save(book)
     }
 
     @Transactional

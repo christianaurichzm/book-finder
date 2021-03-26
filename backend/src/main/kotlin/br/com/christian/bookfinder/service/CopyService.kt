@@ -7,7 +7,7 @@ interface CopyService {
 
     fun findById(id: Long): Copy
 
-    fun save(copy: Copy)
+    fun save(copy: Copy): Copy
 
     fun deleteById(id: Long)
 }

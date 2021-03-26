@@ -18,7 +18,7 @@ data class Store (
     val id: Long,
 
     @Column(name="name", nullable = false)
-    val name: String,
+    var name: String,
 
     @OneToMany(mappedBy="store", cascade = [CascadeType.ALL])
     @JsonIgnore

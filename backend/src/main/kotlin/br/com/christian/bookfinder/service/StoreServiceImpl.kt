@@ -22,8 +22,8 @@ class StoreServiceImpl : StoreService {
     }
 
     @Transactional
-    override fun save(store: Store) {
-        storeRepository.save(store)
+    override fun save(store: Store): Store {
+        return storeRepository.save(store)
     }
 
     @Transactional

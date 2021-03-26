@@ -22,8 +22,8 @@ data class Copy (
 
     @ManyToOne
     @JoinColumn(name = "store_id")
-    val store: Store,
+    var store: Store,
 
     @Column(name="price", nullable = false)
-    val price: Double
+    var price: Double
 )

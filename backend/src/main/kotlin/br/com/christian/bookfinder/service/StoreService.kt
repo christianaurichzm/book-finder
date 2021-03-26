@@ -1,13 +1,13 @@
 package br.com.christian.bookfinder.service
 
-import br.com.christian.bookfinder.model.Book
+import br.com.christian.bookfinder.model.Store
 
-interface BookService {
-    fun findAll(): List<Book>
+interface StoreService {
+    fun findAll(): List<Store>
 
-    fun findById(id: Long): Book
+    fun findById(id: Long): Store
 
-    fun save(book: Book)
+    fun save(store: Store): Store
 
     fun deleteById(id: Long)
 }

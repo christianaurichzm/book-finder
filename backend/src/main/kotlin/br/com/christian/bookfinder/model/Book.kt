@@ -18,9 +18,9 @@ data class Book (
     val id: Long,
 
     @Column(name="title", nullable = false)
-    val title: String,
+    var title: String,
 
     @OneToMany(mappedBy = "book", cascade = [CascadeType.ALL])
     @JsonIgnore
-    val copys: List<Copy>
+    var copys: List<Copy>?
 )
