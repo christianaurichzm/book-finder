@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.FetchType
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
@@ -20,7 +21,7 @@ data class Store (
     @Column(name="name", nullable = false)
     var name: String,
 
-    @OneToMany(mappedBy="store", cascade = [CascadeType.ALL])
+    @OneToMany(mappedBy="store", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JsonIgnore
     val copys: List<Copy>
 )
