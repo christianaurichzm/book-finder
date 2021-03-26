@@ -1,6 +1,6 @@
 package br.com.christian.bookfinder.model
 
-import lombok.Data
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -8,7 +8,6 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.OneToMany
 
-@Data
 @Entity
 data class Store (
     @Id
@@ -19,5 +18,6 @@ data class Store (
     val name: String,
 
     @OneToMany(mappedBy="store")
+    @JsonIgnore
     val copys: List<Copy>
 )
