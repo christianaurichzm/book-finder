@@ -2,7 +2,7 @@ package br.com.christian.bookfinder.controller
 
 import br.com.christian.bookfinder.model.Copy
 import br.com.christian.bookfinder.model.Store
-import br.com.christian.bookfinder.service.StoreServiceImpl
+import br.com.christian.bookfinder.service.StoreService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/stores")
 class StoreController {
     @Autowired
-    lateinit var storeService: StoreServiceImpl
+    lateinit var storeService: StoreService
 
     @GetMapping("/{id}")
     fun getStore(@PathVariable id: Long): Store {
@@ -25,7 +25,7 @@ class StoreController {
     }
 
     @GetMapping("/{id}/stock")
-    fun getStoreStock(@PathVariable id: Long): List<Copy> {
+    fun getStoreStock(@PathVariable id: Long): List<Copy>? {
         return storeService.getStock(id)
     }
 

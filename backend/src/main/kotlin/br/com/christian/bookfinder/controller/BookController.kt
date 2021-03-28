@@ -2,7 +2,7 @@ package br.com.christian.bookfinder.controller
 
 import br.com.christian.bookfinder.model.Book
 import br.com.christian.bookfinder.model.Store
-import br.com.christian.bookfinder.service.BookServiceImpl
+import br.com.christian.bookfinder.service.BookService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/books")
 class BookController {
     @Autowired
-    lateinit var bookService: BookServiceImpl
+    lateinit var bookService: BookService
 
     @GetMapping("/find/{id}")
     fun findBookStores(@PathVariable id: Long): List<Store>? {

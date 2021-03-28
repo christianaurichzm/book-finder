@@ -4,7 +4,7 @@ import br.com.christian.bookfinder.model.Copy
 import br.com.christian.bookfinder.model.Store
 
 interface StoreService {
-    fun getStock(id: Long): List<Copy>
+    fun getStock(id: Long): List<Copy>?
 
     fun findAll(): List<Store>
 

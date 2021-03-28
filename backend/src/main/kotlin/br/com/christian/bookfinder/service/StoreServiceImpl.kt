@@ -13,8 +13,8 @@ class StoreServiceImpl : StoreService {
     lateinit var storeRepository: StoreRepository
 
     @Transactional
-    override fun getStock(id: Long): List<Copy> {
-        return findById(id).copies.distinctBy { it.book.id }
+    override fun getStock(id: Long): List<Copy>? {
+        return findById(id).copies?.distinctBy { it.book.id }
     }
 
     @Transactional
