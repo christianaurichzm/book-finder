@@ -14,7 +14,7 @@ class BookServiceImpl : BookService {
 
     @Transactional
     override fun findStoresByBookId(id: Long): List<Store>? {
-        return findById(id).copies?.map { copy -> copy.store }
+        return findById(id).copies?.map { it.store }?.distinctBy { it.id }
     }
 
     @Transactional
