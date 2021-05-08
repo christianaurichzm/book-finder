@@ -2,8 +2,7 @@ package br.com.christian.bookfinder.service
 
 import br.com.christian.bookfinder.model.Book
 import br.com.christian.bookfinder.repository.BookRepository
-import junit.framework.Assert.assertEquals
-import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
