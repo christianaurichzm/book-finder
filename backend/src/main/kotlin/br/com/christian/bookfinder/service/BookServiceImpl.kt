@@ -12,9 +12,20 @@ class BookServiceImpl : BookService {
     @Autowired
     lateinit var bookRepository: BookRepository
 
+    override fun findStoresByBook(book: Book): List<Store>? {
+        return book.copies?.map { it.store }?.distinctBy { it.id }
+    }
+
     @Transactional
     override fun findStoresByBookId(id: Long): List<Store>? {
-        return findById(id).copies?.map { it.store }?.distinctBy { it.id }
+        val bookToFind = findById(id)
+        return findStoresByBook(bookToFind)
+    }
+
+    @Transactional
+    override fun findStoresByBookTitle(title: String): List<Store>? {
+        val bookToFind = findByTitle(title)
+        return findStoresByBook(bookToFind)
     }
 
     @Transactional
@@ -25,6 +36,11 @@ class BookServiceImpl : BookService {
     @Transactional
     override fun findById(id: Long): Book {
         return bookRepository.findById(id).get()
+    }
+
+    @Transactional
+    override fun findByTitle(title: String): Book {
+        return bookRepository.findByTitleIgnoreCaseContaining(title)
     }
 
     @Transactional

@@ -19,9 +19,14 @@ class BookController {
     @Autowired
     lateinit var bookService: BookService
 
-    @GetMapping("/find/{id}")
-    fun findBookStores(@PathVariable id: Long): List<Store>? {
+    @GetMapping("/find/id/{id}")
+    fun findBookStoresById(@PathVariable id: Long): List<Store>? {
         return bookService.findStoresByBookId(id)
+    }
+
+    @GetMapping("/find/title/{title}")
+    fun findBookStoresByTitle(@PathVariable title: String): List<Store>? {
+        return bookService.findStoresByBookTitle(title)
     }
 
     @GetMapping("/{id}")
